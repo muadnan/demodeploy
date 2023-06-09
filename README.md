@@ -13,5 +13,5 @@ I mapped the port specify in image 8501 to port 80.
 
 You can access the site by:
 
-104.211.200.206
+http://35.244.32.189/
 
