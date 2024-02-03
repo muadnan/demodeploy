@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"log"
-	"io/ioutil"
+	"os"
 )
 
 func main() {
@@ -18,7 +17,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Println("Demo changes documented for golang in changelog.md")
+		fmt.Println("Demo changes documented in changelog.md")
 	} else {
 		// If the file doesn't exist, display an error message
 		fmt.Printf("Error: File %s not found.\n", fileName)
@@ -34,7 +33,7 @@ func appendDemoLine(fileName string) error {
 	defer file.Close()
 
 	// Append the demo line to the file
-	demoLine := "## Demo\n- Added demo line for golang\nDemo complete\n"
+	demoLine := "## Demo\n- Added demo line\nDemo complete\n"
 	if _, err := file.WriteString(demoLine); err != nil {
 		return err
 	}
