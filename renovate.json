@@ -1,3 +1,47 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends":[
+      "config:recommended"
+  ],
+  "prHourlyLimit": 0,
+  "ignoreTests": true,
+  "prConcurrentLimit": 0,
+  "enabledManagers": ["npm","gomod", "dockerfile"],
+  "separateMinorPatch": true,
+  "branchConcurrentLimit": 0,
+  "commitMessageExtra": "from {{#if isPinDigest}}{{currentDigestShort}}{{else}}{{currentVersion}}{{/if}} to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "branchPrefix": "feature/",
+  "baseBranches": ["master"],
+  "postUpgradeTasks": {
+    "commands": ["sh script.sh"],
+    "fileFilters": ["CHANGELOG.md"],
+    "executionMode": "update"
+  },
+  "packageRules": [
+      {
+        "matchDepTypes": ["devDependencies"],
+        "matchPackagePatterns": ["*"],
+        "matchUpdateTypes": ["minor"],
+        "automerge": true
+      },
+      {
+          "matchPackagePatterns": ["*"],
+          "matchUpdateTypes": ["major"],
+          "enabled": true,
+        "automerge": false
+      },
+      {
+          "matchPackagePatterns": ["*"],
+          "matchUpdateTypes": ["minor"],
+          "enabled": true,
+        "automerge": false
+      },
+      {
+          "matchPackagePatterns": ["*"],
+          "matchUpdateTypes": ["patch"],
+          "enabled": true,
+        "automerge": false
+      }
+  ],
+  "enabled": true
 }
