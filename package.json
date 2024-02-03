@@ -39,7 +39,7 @@
 		"scoped"
 	],
 	"dependencies": {
-		"got": "14.1.0",
+		"got": "14.2.0",
 		"registry-auth-token": "5.0.2",
 		"registry-url": "6.0.1",
 		"semver": "7.5.4",
