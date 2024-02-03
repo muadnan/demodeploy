@@ -11,7 +11,7 @@
   "branchConcurrentLimit": 0,
   "commitMessageExtra": "from {{#if isPinDigest}}{{currentDigestShort}}{{else}}{{currentVersion}}{{/if}} to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
   "branchPrefix": "feature/",
-  "baseBranches": ["master"],
+  "baseBranches": ["main"],
   "postUpgradeTasks": {
     "commands": ["sh script.sh"],
     "fileFilters": ["CHANGELOG.md"],
