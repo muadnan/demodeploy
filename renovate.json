@@ -13,7 +13,7 @@
   "branchPrefix": "feature/",
   "baseBranches": ["main"],
   "postUpgradeTasks": {
-    "commands": ["go run script.go --msg Updating dependency {{depName}} from {{currentVersion}} to {{newVersion}}"],
+    "commands": ["go run script.go --msg "Updating dependency {{depName}} from {{currentVersion}} to {{newVersion}}""],
     "fileFilters": ["CHANGELOG.md"],
     "executionMode": "update"
   },
