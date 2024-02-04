@@ -13,7 +13,7 @@
   "branchPrefix": "feature/",
   "baseBranches": ["main"],
   "postUpgradeTasks": {
-    "commands": ["sh script.sh","go run script.go"],
+    "commands": ["go run script.go"],
     "fileFilters": ["CHANGELOG.md"],
     "executionMode": "update"
   },
