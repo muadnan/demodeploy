@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -8,12 +9,13 @@ import (
 
 func main() {
 	// Define the file name
-	fileName := "CHANGELOG.md"
-
+	fileName := "version.txt"
+	msg := flag.String("msg", "", "Enter msg to write")
+	flag.Parse()
 	// Check if the file exists
 	if _, err := os.Stat(fileName); err == nil {
 		// Append the demo line to the end of the file
-		err := appendDemoLine(fileName)
+		err := appendDemoLine(fileName, *msg)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -24,7 +26,7 @@ func main() {
 	}
 }
 
-func appendDemoLine(fileName string) error {
+func appendDemoLine(fileName string, msg string) error {
 	// Open the file in append mode
 	file, err := os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
@@ -33,7 +35,7 @@ func appendDemoLine(fileName string) error {
 	defer file.Close()
 
 	// Append the demo line to the file
-	demoLine := "## Demo\n- Added demo line\nDemo complete\n"
+	demoLine := "## Demo\n- Added demo line\nDemo complete\n" + msg
 	if _, err := file.WriteString(demoLine); err != nil {
 		return err
 	}
