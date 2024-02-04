@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Define the file name
-	fileName := "version.txt"
+	fileName := "CHANGELOG.md"
 	msg := flag.String("msg", "", "Enter msg to write")
 	flag.Parse()
 	// Check if the file exists
