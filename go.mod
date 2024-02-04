@@ -13,7 +13,7 @@ require (
 	github.com/tidwall/gjson v1.17.0
 	golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb
 	gopkg.in/tomb.v2 v2.0.0-20161208151619-d5d1b5820637
-	github.com/sendgrid/sendgrid-go v3.11.1+incompatible
+	github.com/sendgrid/sendgrid-go v3.14.0+incompatible
 
 )
 
