@@ -4,6 +4,7 @@
       "config:recommended"
   ],
   "prHourlyLimit": 0,
+  "goGetDirs": ["./"]
   "ignoreTests": true,
   "prConcurrentLimit": 0,
   "enabledManagers": ["npm","gomod", "dockerfile"],
