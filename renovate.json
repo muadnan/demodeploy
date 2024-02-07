@@ -17,6 +17,9 @@
     "fileFilters": ["CHANGELOG.md"],
     "executionMode": "update"
   },
+    "constraints": {
+    "go": "1.21"
+  },
   "packageRules": [
       {
         "matchDepTypes": ["devDependencies"],
