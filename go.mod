@@ -14,8 +14,6 @@ require (
 	github.com/tidwall/gjson v1.17.0
 	golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb
 	gopkg.in/tomb.v2 v2.0.0-20141024135613-dd632973f1e7
-	golang.org/x/oauth2/jwt v0.16.0
-
 )
 
 require (
