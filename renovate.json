@@ -27,6 +27,8 @@
         "matchPackagePatterns": ["*"],
         "matchUpdateTypes": ["minor"],
         "minimumReleaseAge": "30 days",
+        "internalChecksFilter": "strict",
+        "internalChecksAsSuccess": true,
         "automerge": true
       },
       {
@@ -34,6 +36,8 @@
           "matchUpdateTypes": ["major"],
           "enabled": true,
           "minimumReleaseAge": "30 days",
+          "internalChecksFilter": "strict",
+          "internalChecksAsSuccess": true,
         "automerge": false
       },
       {
@@ -41,6 +45,8 @@
           "matchUpdateTypes": ["minor"],
           "enabled": true,
           "minimumReleaseAge": "30 days",
+          "internalChecksFilter": "strict",
+          "internalChecksAsSuccess": true,
           "automerge": false
       },
       {
@@ -48,6 +54,8 @@
           "matchUpdateTypes": ["patch","digest"],
           "enabled": true,
           "minimumReleaseAge": "30 days",
+          "internalChecksFilter": "strict",
+          "internalChecksAsSuccess": true,
         "automerge": false
       }
   ],
