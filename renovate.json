@@ -26,19 +26,22 @@
         "matchDepTypes": ["devDependencies"],
         "matchPackagePatterns": ["*"],
         "matchUpdateTypes": ["minor"],
+        "minimumReleaseAge": "30 days",
         "automerge": true
       },
       {
           "matchPackagePatterns": ["*"],
           "matchUpdateTypes": ["major"],
           "enabled": true,
+          "minimumReleaseAge": "30 days",
         "automerge": false
       },
       {
           "matchPackagePatterns": ["*"],
           "matchUpdateTypes": ["minor"],
           "enabled": true,
-        "automerge": false
+          "minimumReleaseAge": "30 days",
+          "automerge": false
       },
       {
           "matchPackagePatterns": ["*"],
