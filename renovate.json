@@ -28,7 +28,7 @@
         "matchUpdateTypes": ["minor"],
         "minimumReleaseAge": "30 days",
         "internalChecksFilter": "strict",
-        "internalChecksAsSuccess": true,
+        "internalChecksAsSuccess": false,
         "automerge": true
       },
       {
