@@ -7,7 +7,7 @@
   "goGetDirs": ["./"],
   "ignoreTests": true,
   "prConcurrentLimit": 0,
-  "enabledManagers": ["npm","gomod", "dockerfile"],
+  "enabledManagers": ["gomod"],
   "separateMinorPatch": true,
   "branchConcurrentLimit": 0,
   "commitMessageExtra": "from {{{currentVersion}}} to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
@@ -42,8 +42,9 @@
       },
       {
           "matchPackagePatterns": ["*"],
-          "matchUpdateTypes": ["patch"],
+          "matchUpdateTypes": ["patch","digest"],
           "enabled": true,
+          "minimumReleaseAge": 30,
         "automerge": false
       }
   ],
