@@ -12,7 +12,7 @@ require (
 	github.com/jackc/pgerrcode v0.0.0-20201024163028-a0d42d470451
 	github.com/sendgrid/sendgrid-go v3.11.1+incompatible
 	github.com/tidwall/gjson v1.17.0
-	golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb
+	golang.org/x/exp 814bf88cf225
 	gopkg.in/tomb.v2 v2.0.0-20141024135613-dd632973f1e7
 	golang.org/x/oauth2/jwt v0.16.0
 
