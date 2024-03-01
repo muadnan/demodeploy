@@ -26,7 +26,7 @@
         "matchDepTypes": ["devDependencies"],
         "matchPackagePatterns": ["*"],
         "matchUpdateTypes": ["minor"],
-        "minimumReleaseAge": "30 days",
+        "minimumReleaseAge": "3 days",
         "internalChecksFilter": "strict",
         "internalChecksAsSuccess": false,
         "automerge": true
