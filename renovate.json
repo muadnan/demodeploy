@@ -44,7 +44,7 @@
           "matchPackagePatterns": ["*"],
           "matchUpdateTypes": ["patch","digest"],
           "enabled": true,
-          "minimumReleaseAge": 30,
+          "minimumReleaseAge": "30 days",
         "automerge": false
       }
   ],
