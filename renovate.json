@@ -28,7 +28,7 @@
         "matchUpdateTypes": ["minor"],
         "minimumReleaseAge": "30 days",
         "internalChecksFilter": "strict",
-        "internalChecksAsSuccess": true,
+        "internalChecksAsSuccess": false,
         "automerge": true
       },
       {
@@ -37,7 +37,7 @@
           "enabled": true,
           "minimumReleaseAge": "30 days",
           "internalChecksFilter": "strict",
-          "internalChecksAsSuccess": true,
+          "internalChecksAsSuccess": false,
         "automerge": false
       },
       {
@@ -46,7 +46,7 @@
           "enabled": true,
           "minimumReleaseAge": "30 days",
           "internalChecksFilter": "strict",
-          "internalChecksAsSuccess": true,
+          "internalChecksAsSuccess": false,
           "automerge": false
       },
       {
@@ -55,7 +55,7 @@
           "enabled": true,
           "minimumReleaseAge": "30 days",
           "internalChecksFilter": "strict",
-          "internalChecksAsSuccess": true,
+          "internalChecksAsSuccess": false,
         "automerge": false
       }
   ],
