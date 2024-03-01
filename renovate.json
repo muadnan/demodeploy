@@ -43,7 +43,7 @@
       {
           "matchPackagePatterns": ["*"],
           "matchUpdateTypes": ["minor"],
-          "enabled": false,
+          "enabled": true,
           "minimumReleaseAge": "30 days",
           "internalChecksFilter": "strict",
           "internalChecksAsSuccess": true,
