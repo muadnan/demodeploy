@@ -31,7 +31,6 @@ jobs:
           echo "$num_dir_changed"
           echo "=============="
           end_dir="$(echo "$dir_changed" | cut -d'/' -f2)"
-          end_dir="$(echo ${end_dir[@]})"
           end_dir="$(jq --compact-output --null-input '$ARGS.positional' --args -- "${end_dir[@]}")"
           echo "$end_dir"
           echo "end_dir=$end_dir" >> $GITHUB_OUTPUT
@@ -45,6 +44,8 @@ jobs:
     needs: validate-helm-charts
     if: ${{ needs.validate-helm-charts.outputs.num > 0 }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.validate-helm-charts.outputs.dir) }}
     steps:
       - name: build Image
         run: |
