@@ -1,12 +1,11 @@
 name: build-images
 on:
   workflow_call:
+    inputs:
+      dir:
+        type: string
+        required: true
   push:
-  inputs:
-    dir:
-      type: string
-      required: true
-    
 jobs:
   validate-helm-charts:
     runs-on: ubuntu-latest
