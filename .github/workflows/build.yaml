@@ -45,5 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build Image
-        run: echo "This is test"
+        run: |
+          echo "This is test"
+          echo ${{ needs.validate-helm-charts.outputs.dir }}
         
