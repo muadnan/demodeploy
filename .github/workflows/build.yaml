@@ -48,9 +48,9 @@ jobs:
           echo "This is test"
           echo ${{ needs.validate-helm-charts.outputs.dir }}
                
-      - name: buid all
-        uses: ./.github/workflows/release.yaml
-        with:
-          context: demo/${{ needs.validate-helm-charts.outputs.dir }}
-          filepath: demo/${{ needs.validate-helm-charts.outputs.dir }}/Dockerfile
-          tag: demo:0.0.0
+  buid-all:
+    uses: ./.github/workflows/release.yaml
+    with:
+      context: demo/${{ needs.validate-helm-charts.outputs.dir }}
+      filepath: demo/${{ needs.validate-helm-charts.outputs.dir }}/Dockerfile
+      tag: demo:0.0.0
