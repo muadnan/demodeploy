@@ -1,0 +1,36 @@
+name: build-and-release-images
+on:
+  workflow_call:
+    inputs:
+      context:
+        type: string
+        required: true
+      filepath:
+        type: string
+        required: true
+      tag:
+        type: string
+        required: true
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Push Images
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ inputs.context }}
+          file: ${{ inputs.filepath }}
+          no-cache: true
+          pull: true
+          push: false
+          tags: ${{ inputs.tag }}

@@ -47,4 +47,17 @@ jobs:
         run: |
           echo "This is test"
           echo ${{ needs.validate-helm-charts.outputs.dir }}
-        
+      
+      - if: ${{ needs.validate-helm-charts.outputs.dir == "dns" }}
+        uses: ./.github/workflows/release.yaml
+        with:
+          context: demo/dns
+          filepath: demo/dns/Dockerfile
+          tag: demo:0.0.0
+          
+      - name: buid all
+        uses: ./.github/workflows/release.yaml
+        with:
+          context: demo/${{ needs.validate-helm-charts.outputs.dir }}
+          filepath: demo/${{ needs.validate-helm-charts.outputs.dir }}/Dockerfile
+          tag: demo:0.0.0
