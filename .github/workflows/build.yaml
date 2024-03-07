@@ -38,7 +38,7 @@ jobs:
   
   build-image:
     needs: validate-helm-charts
-    if: ${{ validate-helm-charts.outputs.num_dir_changed > 0 }}
+    if: ${{ steps.check.outputs.num_dir_changed > 0 }}
     runs-on: ubuntu-latest
     steps:
       - name: build Image
