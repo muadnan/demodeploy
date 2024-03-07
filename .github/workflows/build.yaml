@@ -31,7 +31,7 @@ jobs:
           echo "$num_dir_changed"
           echo "=============="
           end_dir="$(echo "$dir_changed" | cut -d'/' -f2)"
-          echo "end_dir=$end_dir" >> $GITHUB_OUTPUT
+          end_dir="$(echo ${end_dir[@]})" >> $GITHUB_OUTPUT
           echo "num_dir_changed=$num_dir_changed" >> $GITHUB_OUTPUT
       - if : ${{ steps.check.outputs.num_dir_changed > 0 }}
         run: |
