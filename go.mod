@@ -9,7 +9,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/storage/azblob v1.3.1
 	github.com/Azure/go-autorest/autorest/azure/cli v0.4.6
 	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
-	github.com/jackc/pgerrcode v0.0.0-20201024163028-a0d42d470451
+	github.com/jackc/pgerrcode 469b46aa5efa
 	github.com/sendgrid/sendgrid-go v3.11.1+incompatible
 	github.com/tidwall/gjson v1.17.0
 	golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb
