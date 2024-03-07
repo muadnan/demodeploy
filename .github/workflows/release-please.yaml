@@ -19,7 +19,7 @@ jobs:
       - name: Release with release-please
         uses: google-github-actions/release-please-action@v2
         with:
-          token: ${{ secrets.REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: simple
           default-branch: main
     # steps:
