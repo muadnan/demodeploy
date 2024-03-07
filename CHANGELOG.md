@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/adnanshahm/demodeploy/compare/v0.1.0...v0.1.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* demo teo ([d24d3c9](https://www.github.com/adnanshahm/demodeploy/commit/d24d3c95965bb4c60ba21459520063252b3774cb))
+* this is dmeo ([54bff27](https://www.github.com/adnanshahm/demodeploy/commit/54bff275b27da347d1be3bcef13352ebd8636162))
+
 ## [0.1.0](https://www.github.com/adnanshahm/demodeploy/compare/v0.0.0...v0.1.0) (2024-03-07)
 
 
