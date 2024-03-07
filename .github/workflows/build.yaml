@@ -35,11 +35,12 @@ jobs:
         run: |
           echo "Conditional-------------"
           echo ${{ steps.check.outputs.end_dir }}
-#   build-image:
-#     needs: validate-helm-charts
-#     if: validate-helm-charts.outputs.end_dir > 0
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: build Image
-#         run: echo ""
+  
+  build-image:
+    needs: validate-helm-charts
+    if: ${{ validate-helm-charts.outputs.num_dir_changed > 0 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: build Image
+        run: echo "This is test"
         
