@@ -9,6 +9,9 @@ on:
 jobs:
   validate-helm-charts:
     runs-on: ubuntu-latest
+    outputs:
+      num: ${{ steps.check.outputs.num_dir_changed }}
+      dir: ${{ steps.check.outputs.end_dir }}
     strategy:
       fail-fast: false
     steps:
@@ -38,7 +41,7 @@ jobs:
   
   build-image:
     needs: validate-helm-charts
-    if: ${{ needs.validate-helm-charts.outputs.num_dir_changed > 0 }}
+    if: ${{ needs.validate-helm-charts.outputs.num > 0 }}
     runs-on: ubuntu-latest
     steps:
       - name: build Image
