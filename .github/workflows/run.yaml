@@ -1,0 +1,11 @@
+name: nightly-images
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+
+  pipeline:
+    uses: ./.github/workflows/build.yaml
+    with:
+      dir: demo

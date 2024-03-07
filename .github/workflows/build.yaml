@@ -1,0 +1,34 @@
+name: build-images
+on:
+  workflow_call:
+  push:
+  inputs:
+    dir:
+      type: string
+      required: true
+    
+jobs:
+  validate-helm-charts:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Check Changes
+        id: "check"
+        run: |
+          changed_files="$(git show --pretty="" --name-only)"
+          dir_changed="$(echo "$changed_files" | xargs dirname | grep -o "${{ inputs.dir }}/[^/]*" | sort | uniq || true)"
+          num_dir_changed="$(echo "$dir_changed" | grep -c "${{ inputs.dir }}" || true)"
+          end_dir="$(echo "$dir_changed" | cut -d'/' -f2)"
+          echo "$end_dir"
+          echo "num_dir_changed=$num_dir_changed" >> $GITHUB_OUTPUT
+      - if : steps.check.outputs.num_dir_changed > 0
+        run: echo ${{ steps.check.outputs.end_dir }}
+#   build-image:
+#     needs: validate-helm-charts
+#     if: validate-helm-charts.outputs.end_dir > 0
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: build Image
+#         run: echo ""
+        
