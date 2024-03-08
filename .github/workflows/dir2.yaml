@@ -4,6 +4,9 @@ on:
 jobs:
   find-out-changes:
     runs-on: ubuntu-latest
+    outputs:
+      demo: ${{ steps.changed-files-yaml.outputs.demo_any_changed }}
+      github: ${{ steps.changed-files-yaml.outputs.github_any_changed }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -53,7 +56,7 @@ jobs:
 
   build-image:
     needs: find-out-changes
-    if: needs.find-out-changes.steps.changed-files-yaml.outputs.demo_any_changed == 'true'
+    if: needs.find-out-changes.outputs.demo == 'true'
     uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
@@ -62,7 +65,7 @@ jobs:
 
   build-imagew:
     needs: find-out-changes
-    if: needs.find-out-changes.steps.changed-files-yaml.outputs.github_any_changed == 'true'
+    if: needs.find-out-changes.outputs.github == 'true'
     uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
