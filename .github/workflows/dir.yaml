@@ -2,7 +2,7 @@ name: dir-changes
 on:
   push:
     paths:
-      - "demo/*"
+      - "demo/**"
 jobs:
   find-out-changes:
     runs-on: ubuntu-latest
