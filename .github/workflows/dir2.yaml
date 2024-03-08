@@ -53,7 +53,7 @@ jobs:
 
   build-image:
     needs: find-out-changes
-    if: needs.find-out-changes.outputs.demo_any_changed == 'true'
+    if: needs.find-out-changes.steps.changed-files-yaml.outputs.demo_any_changed == 'true'
     uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
@@ -62,7 +62,7 @@ jobs:
 
   build-imagew:
     needs: find-out-changes
-    if: needs.find-out-changes.outputs.github_any_changed == 'true'
+    if: needs.find-out-changes.steps.changed-files-yaml.outputs.github_any_changed == 'true'
     uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
