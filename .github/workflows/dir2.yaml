@@ -1,4 +1,4 @@
-name: dir-changes
+name: dir-changess
 on:
   push:
 jobs:
