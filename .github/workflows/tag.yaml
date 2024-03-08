@@ -6,17 +6,16 @@ on:
 jobs:
   tag:
     runs-on: ubuntu-latest
-    ouputs:
+    outputs:
       version: ${{ steps.version.outputs.version }}
 
     steps:
       - name: echo
         id: version
         run: echo  "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
-
-   echo:
-     runs-on: ubuntu-latest
-     needs: tag
-     steps:
-       - name: echo2
-         run: echo "${{ needs.tag.outputs.version  }}"
+  echo:
+    runs-on: ubuntu-latest
+    needs: tag
+    steps:
+      - name: echo2
+        run: echo "${{ needs.tag.outputs.version  }}"
