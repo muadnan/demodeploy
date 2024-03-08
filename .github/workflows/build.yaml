@@ -1,10 +1,6 @@
 name: build-images
 on:
   workflow_call:
-    inputs:
-      dir:
-        type: string
-        required: true
 jobs:
   validate-helm-charts:
     runs-on: ubuntu-latest
@@ -13,6 +9,8 @@ jobs:
       dir: ${{ steps.check.outputs.end_dir }}
     strategy:
       fail-fast: false
+      matrix:
+        dir: [backups,images/application,images/dev,images/pipeline]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -23,10 +21,10 @@ jobs:
         run: |
           changed_files="$(git show --pretty="" --name-only)"
           echo "$changed_files"
-          dir_changed="$(echo "$changed_files" | xargs dirname | grep -o "${{ inputs.dir }}/[^/]*" | sort | uniq || true)"
+          dir_changed="$(echo "$changed_files" | xargs dirname | grep -o "${{ matrix.dir }}/[^/]*" | sort | uniq || true)"
           echo "---------------"
           echo "$dir_changed"
-          num_dir_changed="$(echo "$dir_changed" | grep -c "${{ inputs.dir }}" || true)"
+          num_dir_changed="$(echo "$dir_changed" | grep -c "${{ matrix.dir }}" || true)"
           echo "-----------"
           echo "$num_dir_changed"
           echo "=============="
