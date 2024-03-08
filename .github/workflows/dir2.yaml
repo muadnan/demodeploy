@@ -31,6 +31,13 @@ jobs:
         run: |
           echo "One or more test file(s) has changed."
           echo "List all the files that have changed: $TEST_ALL_CHANGED_FILES"
+      - name: demo
+        if: steps.changed-files-yaml.outputs.demo_any_changed == 'true'
+        uses: ./.github/workflows/release.yaml
+        with:
+          filepath: ./Dockerfile
+          context: .
+          tag: "demo:0.0.0"
       
       - name: Run step if doc file(s) change
         if: steps.changed-files-yaml.outputs.github_any_changed == 'true'
@@ -39,10 +46,17 @@ jobs:
         run: |
           echo "One or more doc file(s) has changed."
           echo "List all the files that have changed: $DOC_ALL_CHANGED_FILES"
+      - name: demo2
+        if: steps.changed-files-yaml.outputs.github_any_changed == 'true'
+        uses: ./.github/workflows/release.yaml
+        with:
+          filepath: ./Dockerfile
+          context: .
+          tag: "demo:0.0.0"
 
   build-image:
     needs: find-out-changes
-    if: ${{ needs.find-out-changes.outputs.demo == true }}
+    if: ${{ needs.find-out-changes.outputs.demo == 'true' }}
     uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
@@ -51,7 +65,7 @@ jobs:
 
   build-imagew:
     needs: find-out-changes
-    if: ${{ needs.find-out-changes.outputs.github == true }}
+    if: ${{ needs.find-out-changes.outputs.github == 'true' }}
     uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
