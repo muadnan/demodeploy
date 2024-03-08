@@ -31,6 +31,33 @@ jobs:
           for file in ${{ steps.changed-directories.outputs.all_changed_and_modified_files }}; do
             echo $file
           done
+      - name: Get all test, doc and src files that have changed
+        id: changed-files-yaml
+        uses: tj-actions/changed-files@v42
+        with:
+          files_yaml: |
+            demo:
+              - demo/**
+            github:
+              - '.github/**'
+          # Optionally set `files_yaml_from_source_file` to read the YAML from a file. e.g `files_yaml_from_source_file: .github/changed-files.yml`
+
+      - name: Run step if test file(s) change
+        # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
+        if: steps.changed-files-yaml.outputs.demo_any_changed == 'true'  
+        env:
+          TEST_ALL_CHANGED_FILES: ${{ steps.changed-files-yaml.outputs.demo_all_changed_files }}
+        run: |
+          echo "One or more test file(s) has changed."
+          echo "List all the files that have changed: $TEST_ALL_CHANGED_FILES"
+      
+      - name: Run step if doc file(s) change
+        if: steps.changed-files-yaml.outputs.github_any_changed == 'true'
+        env:
+          DOC_ALL_CHANGED_FILES: ${{ steps.changed-files-yaml.outputs.github_all_changed_files }}
+        run: |
+          echo "One or more doc file(s) has changed."
+          echo "List all the files that have changed: $DOC_ALL_CHANGED_FILES"
 
   do-stuff:
     runs-on: ubuntu-latest
