@@ -1,0 +1,30 @@
+name: dir-changes
+on:
+  push:
+    paths:
+      - "demo/*"
+jobs:
+  find-out-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      dirs: ${{ steps.changed-files.dirs }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v42.0.7
+        with:
+          dir_names: true
+
+  do-stuff:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.find-out-changes.outputs.dirs)}}
+    needs:
+      - find-out-changes
+    steps:
+      - name: echo
+        run: echo  "${{ matrix.dir }}"

@@ -38,21 +38,21 @@ jobs:
           echo "Conditional-------------"
           echo ${{ steps.check.outputs.end_dir }}
   
-  build-image:
-    needs: validate-helm-charts
-    if: ${{ needs.validate-helm-charts.outputs.num > 0 }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJSON(needs.validate-helm-charts.outputs.dir) }}
-    steps:
-      - name: build Image
-        run: |
-          echo "This is test"
-          echo ${{ needs.validate-helm-charts.outputs.dir }}
+  # build-image:
+  #   needs: validate-helm-charts
+  #   if: ${{ needs.validate-helm-charts.outputs.num > 0 }}
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix: ${{ fromJSON(needs.validate-helm-charts.outputs.dir) }}
+  #   steps:
+  #     - name: build Image
+  #       run: |
+  #         echo "This is test"
+  #         echo ${{ needs.validate-helm-charts.outputs.dir }}
                
-  buid-all:
-    uses: ./.github/workflows/release.yaml
-    with:
-      context: demo/${{ needs.validate-helm-charts.outputs.dir }}
-      filepath: demo/${{ needs.validate-helm-charts.outputs.dir }}/Dockerfile
-      tag: demo:0.0.0
+  # buid-all:
+  #   uses: ./.github/workflows/release.yaml
+  #   with:
+  #     context: demo/${{ needs.validate-helm-charts.outputs.dir }}
+  #     filepath: demo/${{ needs.validate-helm-charts.outputs.dir }}/Dockerfile
+  #     tag: demo:0.0.0
