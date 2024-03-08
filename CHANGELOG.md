@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/adnanshahm/demodeploy/compare/v0.3.0...v0.4.0) (2024-03-08)
+
+
+### Features
+
+* update ([e5347ce](https://www.github.com/adnanshahm/demodeploy/commit/e5347ce2015c53ba0ca4041e065328e8fb141b4c))
+
 ## [0.3.0](https://www.github.com/adnanshahm/demodeploy/compare/v0.2.0...v0.3.0) (2024-03-08)
 
 
