@@ -14,3 +14,5 @@ if st.button:
     st.write("Result of Addition is : ", c)
     st.write("Result of Subtraction is : ", d)
     st.write("Result of Multiplication is : ", e)
+
+d
