@@ -48,7 +48,6 @@ jobs:
       filepath: ./Dockerfile
       context: .
       tag: "demo:0.0.0"
-      push: false
 
   build-imagew:
     needs: find-out-changes
@@ -58,4 +57,3 @@ jobs:
       filepath: ./Dockerfile
       context: .
       tag: "demo:0.0.0"
-      push: false
