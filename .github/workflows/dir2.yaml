@@ -40,12 +40,10 @@ jobs:
           echo "One or more doc file(s) has changed."
           echo "List all the files that have changed: $DOC_ALL_CHANGED_FILES"
 
-
-
   build-image:
     needs: find-out-changes
     if: ${{ needs.find-out-changes.outputs.demo == true }}
-    uses: ./.github.workflows.release.yaml
+    uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
       context: .
@@ -55,7 +53,7 @@ jobs:
   build-imagew:
     needs: find-out-changes
     if: ${{ needs.find-out-changes.outputs.github == true }}
-    uses: ./.github.workflows.release.yaml
+    uses: ./.github/workflows/release.yaml
     with:
       filepath: ./Dockerfile
       context: .
