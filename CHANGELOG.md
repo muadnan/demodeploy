@@ -1,12 +1,5 @@
 # Changelog
 
-## [1.1.0](https://github.com/adnanshahm/demodeploy/compare/v1.0.0...v1.1.0) (2024-03-10)
-
-
-### Features
-
-* update ([37d6370](https://github.com/adnanshahm/demodeploy/commit/37d6370d45f9dea677a04cb17c4e5512a241458c))
-
 ## [1.0.0](https://github.com/adnanshahm/demodeploy/compare/v0.4.0...v1.0.0) (2024-03-10)
 
 
