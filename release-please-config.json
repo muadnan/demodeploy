@@ -5,7 +5,7 @@
   "extra-files": [
     {
       "type": "yaml",
-      "path": "./Chart.yaml",
+      "path": "Chart.yaml",
       "jsonpath": "$.version"
     }
   ],
