@@ -6,7 +6,7 @@
     {
       "type": "yaml",
       "path": "./Chart.yaml",
-      "jsonpath": "$.json.version"
+      "jsonpath": "$.version"
     }
   ]
 }
