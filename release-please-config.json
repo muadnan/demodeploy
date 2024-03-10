@@ -5,4 +5,7 @@
    "extra-files": [
         "Chart.yaml"
       ]
+    "packages": {
+    ".": {}
+  }
 }
