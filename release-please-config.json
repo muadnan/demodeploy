@@ -8,5 +8,8 @@
       "path": "./Chart.yaml",
       "jsonpath": "$.version"
     }
-  ]
+  ],
+  "packages": {
+    ".": {}
+  }
 }
