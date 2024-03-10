@@ -20,7 +20,6 @@ jobs:
         uses: google-github-actions/release-please-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: helm
           default-branch: main
 #     # steps:
 #     #   - name: Checkout
