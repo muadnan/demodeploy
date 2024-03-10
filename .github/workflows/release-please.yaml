@@ -22,7 +22,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           default-branch: main
           config-file: release-please-config.json
-          release-type: simple
 #     # steps:
 #     #   - name: Checkout
 #     #     uses: actions/checkout@v4
