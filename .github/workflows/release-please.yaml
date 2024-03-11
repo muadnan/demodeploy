@@ -26,7 +26,8 @@ jobs:
           config-file: release-please-config.json
       - name: echo
         run: |
-          echo "version=grep -oP '"version": *"[^/]*"' package.json" >> $GITHUB_OUTPUT
+          echo "version="$(grep -oP '"version": *"[^/]*"' package.json)" >> $GITHUB_OUTPUT
+          echo "$version"
           echo "${{ steps.release.outputs.tag_name }}"
           echo "${{ steps.release.outputs.prs_created }}"
           echo "${{ steps.release.outputs.sha }}"
