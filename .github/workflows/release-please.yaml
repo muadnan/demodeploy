@@ -12,6 +12,7 @@ jobs:
     outputs:
       tag: ${{ steps.release.outputs.tag_name }}
       created: ${{ steps.release.outputs.prs_created }}
+      version: ${{ steps.release.outputs.version }}
 
     steps:
       - name: Check out code
@@ -25,6 +26,7 @@ jobs:
           config-file: release-please-config.json
       - name: echo
         run: |
+          echo "version=grep -oP '"version": *"[^/]*"' package.json" >> $GITHUB_OUTPUT
           echo "${{ steps.release.outputs.tag_name }}"
           echo "${{ steps.release.outputs.prs_created }}"
           echo "${{ steps.release.outputs.sha }}"
@@ -36,7 +38,7 @@ jobs:
     if: needs.release-job.outputs.created == 'true'
     steps:
       - name: sec
-        run: echo "${{ needs.release-job.outputs.tag }}"
+        run: echo "${{ needs.release-job.outputs.version }}"
           
 #     # steps:
 #     #   - name: Checkout
