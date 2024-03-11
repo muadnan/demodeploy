@@ -12,7 +12,7 @@ jobs:
     outputs:
       tag: ${{ steps.release.outputs.tag_name }}
       created: ${{ steps.release.outputs.prs_created }}
-      version: ${{ steps.release.outputs.version }}
+      version: ${{ steps.release.outputs.pr }}
 
     steps:
       - name: Check out code
@@ -45,9 +45,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: release-job
     if: needs.release-job.outputs.created == 'true'
+    strategy:
+      matrix:
+        charts: ${{ fromJSON(needs.release-job.outputs.version) }}
     steps:
       - name: sec
-        run: echo "${{ needs.release-job.outputs.version }}"
+        run: echo "${{ matrix.charts }}"
           
 #     # steps:
 #     #   - name: Checkout
