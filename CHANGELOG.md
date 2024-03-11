@@ -1,5 +1,23 @@
 # Changelog
 
+## [21.1.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v21.1.0) (2024-03-11)
+
+
+### Features
+
+* update ([10b7011](https://github.com/adnanshahm/demodeploy/commit/10b70110110cbe2d7136e148e0938e3c3f92b59e))
+* update ([f1c8067](https://github.com/adnanshahm/demodeploy/commit/f1c8067ee943977b766a81f47b76201f81cd8744))
+* update ([0d7f55f](https://github.com/adnanshahm/demodeploy/commit/0d7f55f9ae6147a318b22ab75086cf8998055fbc))
+* update ([ecf0cc0](https://github.com/adnanshahm/demodeploy/commit/ecf0cc07746acefacada03fbc1eca218f605c81d))
+* update ([5010636](https://github.com/adnanshahm/demodeploy/commit/5010636050e3481ae8bfee0e21320f506bd0348f))
+* updated ([f87a808](https://github.com/adnanshahm/demodeploy/commit/f87a80851e95d75ff9aa78adbc201741a911b069))
+* updated ([2f05021](https://github.com/adnanshahm/demodeploy/commit/2f05021c7c767ddadb2ee986070729a6e68ff748))
+
+
+### Bug Fixes
+
+* update ([b84c8a8](https://github.com/adnanshahm/demodeploy/commit/b84c8a8bf8b163332a7d6187a0dde0d9cf2f10da))
+
 ## [21.0.0](https://github.com/adnanshahm/demodeploy/compare/v1.1.0...v21.0.0) (2024-03-11)
 
 
