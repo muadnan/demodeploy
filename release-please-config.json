@@ -9,6 +9,11 @@
               "type": "yaml",
               "path": "Chart.yaml",
               "jsonpath": "$.appVersion"
+            },
+            {
+              "type": "yaml",
+              "path": "Chart.yaml",
+              "jsonpath": "$.version"
             }
           ]
     }
