@@ -27,7 +27,9 @@ jobs:
       - name: echo
         run: |
           cat package.json
+          echo "------------"
           echo $(jq -r '.version' package.json)
+          echo "-----------------"
           echo echo version=$(grep -oP '"version": *"[^/]*"' package.json) >> $GITHUB_OUTPUT
           echo "$version"
           echo "${{ steps.release.outputs.tag_name }}"
