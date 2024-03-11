@@ -28,6 +28,7 @@ jobs:
           echo "${{ steps.release.outputs.tag_name }}"
           echo "${{ steps.release.outputs.prs_created }}"
           echo "${{ steps.release.outputs.sha }}"
+          echo "${{ steps.release.outputs.pr.number }}"
           echo "${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
   tag:
     runs-on: ubuntu-latest
