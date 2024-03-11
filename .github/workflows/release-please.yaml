@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "${{ steps.release.outputs.tag_name }}"
           echo "${{ steps.release.outputs.prs_created }}"
+          echo "${{ steps.release.outputs.sha }}"
   tag:
     runs-on: ubuntu-latest
     needs: release-job
