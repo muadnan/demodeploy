@@ -48,12 +48,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT: ${{ github.ref }}
+          COM:  ${{ github.sha }}
         run: |
           echo ${PR_URL##*/}
           gh pr checkout 38
           cat package.json
           echo ${PR_URL##*/}
           echo $GIT
+          echo $COM
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
