@@ -41,7 +41,7 @@ jobs:
           echo "${{ steps.release.outputs.pr.number }}"
           echo "${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
           echo "------------//////"
-          gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number,title --jq "-r .number"
+          gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number,title
       - name: Clone repository
         uses: actions/checkout@v4
         with:
