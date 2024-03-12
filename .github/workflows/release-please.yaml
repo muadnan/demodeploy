@@ -51,7 +51,10 @@ jobs:
           gh pr checkout 38
           cat package.json
           echo ${PR_URL##*/}
-          go -v
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
           
   # tag:
   #   runs-on: ubuntu-latest
