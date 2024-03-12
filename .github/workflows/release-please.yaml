@@ -26,6 +26,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
       - name: echo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat package.json
           echo "------------"
@@ -38,10 +40,7 @@ jobs:
           echo "${{ steps.release.outputs.sha }}"
           echo "${{ steps.release.outputs.pr.number }}"
           echo "${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
-      - name: PR Lists
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+          echo "------------//////"
           gh pr list --author "github-actions" --base "main" --label "autorelease:pending" --state "open"
       - name: Clone repository
         uses: actions/checkout@v4
