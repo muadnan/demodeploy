@@ -64,9 +64,6 @@ jobs:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
           echo $EVENT_CONTEXT
-      - name: PR Lists
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   # tag:
   #   runs-on: ubuntu-latest
