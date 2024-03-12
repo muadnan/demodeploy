@@ -64,6 +64,12 @@ jobs:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
           echo $EVENT_CONTEXT
+      - name: ch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr checkout 39
+          cat Chart.yaml
           
   # tag:
   #   runs-on: ubuntu-latest
