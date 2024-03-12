@@ -38,6 +38,11 @@ jobs:
           echo "${{ steps.release.outputs.sha }}"
           echo "${{ steps.release.outputs.pr.number }}"
           echo "${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
+      - name: PR Lists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr list --author "github-actions" --base "main" --label "autorelease:pending" --state "open"
       - name: Clone repository
         uses: actions/checkout@v4
         with:
@@ -60,6 +65,9 @@ jobs:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
           echo $EVENT_CONTEXT
+      - name: PR Lists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   # tag:
   #   runs-on: ubuntu-latest
