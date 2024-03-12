@@ -47,18 +47,22 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr checkout
+          echo ${PR_URL##*/}
+          gh pr checkout 38
           cat package.json
-  tag:
-    runs-on: ubuntu-latest
-    needs: release-job
-    if: needs.release-job.outputs.created == 'true'
-    strategy:
-      matrix:
-        charts: ${{ fromJSON(needs.release-job.outputs.version) }}
-    steps:
-      - name: sec
-        run: echo "${{ matrix.charts }}"
+          echo ${PR_URL##*/}
+          go -v
+          
+  # tag:
+  #   runs-on: ubuntu-latest
+  #   needs: release-job
+  #   if: needs.release-job.outputs.created == 'true'
+  #   strategy:
+  #     matrix:
+  #       charts: ${{ fromJSON(needs.release-job.outputs.version) }}
+  #   steps:
+  #     - name: sec
+  #       run: echo "${{ matrix.charts }}"
           
 #     # steps:
 #     #   - name: Checkout
