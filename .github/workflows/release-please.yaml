@@ -76,11 +76,14 @@ jobs:
   tag:
     runs-on: ubuntu-latest
     needs: release-job
+    strategy:
+      matrix:
+        PR: ${{ fromJSON(needs.release-job.outputs.prnu) }}
     steps:
       - name: sec
-        env: 
-          PR_NUMBER: ${{ needs.release-job.outputs.prnu }}
-        run: echo "${PR_NUMBER}"
+        run: |
+          echo "${{ fromJSON(needs.release-job.outputs.prnu) }}"
+          echo ${{ matrix.PR }}
           
 #     # steps:
 #     #   - name: Checkout
