@@ -14,6 +14,7 @@ jobs:
       tag: ${{ steps.release.outputs.tag_name }}
       created: ${{ steps.release.outputs.prs_created }}
       version: ${{ steps.release.outputs.pr }}
+      prnu: ${{ steps.release.outputs.prnumber }}
 
     steps:
       - name: Check out code
@@ -41,7 +42,7 @@ jobs:
           echo "${{ steps.release.outputs.pr.number }}"
           echo "${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
           echo "------------//////"
-          gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number,title --jq '.[] | .number'
+          echo "prnumber=$(gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number,title --jq '.[] | .number')" >> $GITHUB_OUTPUT
       - name: Clone repository
         uses: actions/checkout@v4
         with:
@@ -71,16 +72,12 @@ jobs:
           gh pr checkout 39
           cat Chart.yaml
           
-  # tag:
-  #   runs-on: ubuntu-latest
-  #   needs: release-job
-  #   if: needs.release-job.outputs.created == 'true'
-  #   strategy:
-  #     matrix:
-  #       charts: ${{ fromJSON(needs.release-job.outputs.version) }}
-  #   steps:
-  #     - name: sec
-  #       run: echo "${{ matrix.charts }}"
+  tag:
+    runs-on: ubuntu-latest
+    needs: release-job
+    steps:
+      - name: sec
+        run: echo "${{ needs.release-job.outputs.prnu }}"
           
 #     # steps:
 #     #   - name: Checkout
