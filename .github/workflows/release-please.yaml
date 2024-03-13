@@ -67,7 +67,7 @@ jobs:
 
       - name: PRINTJSON
         env:
-          PRKK: ${{ toJSON(steps.release.outputs.prnumber) }}
+          PRKK: ${{ fromJSON(steps.release.outputs.prnumber) }}
         run: |
           echo $PRKK
           
