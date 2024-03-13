@@ -78,7 +78,9 @@ jobs:
     needs: release-job
     steps:
       - name: sec
-        run: echo "${{ needs.release-job.outputs.prnu }}"
+        env: 
+          PR_NUMBER: ${{ needs.release-job.outputs.prnu }}
+        run: echo "${PR_NUMBER}"
           
 #     # steps:
 #     #   - name: Checkout
