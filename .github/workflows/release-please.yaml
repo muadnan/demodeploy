@@ -43,7 +43,7 @@ jobs:
           echo "${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
           echo "------------//////"
           gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number --jq '.[] | .number'
-          echo "prnumber=$(gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number --jq '.[] | .number')" >> $GITHUB_OUTPUT
+          echo prnumber=$(gh pr list --author "github-actions[bot]" --label "autorelease: pending" --state "open" --json number --jq '.[] | .number') >> $GITHUB_OUTPUT
       - name: Clone repository
         uses: actions/checkout@v4
         with:
@@ -63,7 +63,9 @@ jobs:
           echo $GIT
           echo $COM
       - name: PRINT PR
-        run: echo ${{ steps.release.outputs.prnumber }}
+        run: |
+          echo ${{ steps.release.outputs.prnumber }}
+          echo ${{ steps.release.outputs.version }}
 
       - name: PRINTJSON
         env:
