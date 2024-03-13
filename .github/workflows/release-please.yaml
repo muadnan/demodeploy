@@ -62,6 +62,15 @@ jobs:
           echo ${PR_URL##*/}
           echo $GIT
           echo $COM
+      - name: PRINT PR
+        run: echo ${{ steps.release.outputs.prnumber }}
+
+      - name: PRINTJSON
+        env:
+          PRKK: ${{ toJSON(steps.release.outputs.prnumber) }}
+        run: |
+          echo $PRKK
+          
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
