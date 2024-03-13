@@ -14,7 +14,7 @@ jobs:
       tag: ${{ steps.release.outputs.tag_name }}
       created: ${{ steps.release.outputs.prs_created }}
       version: ${{ steps.release.outputs.pr }}
-      prnu: ${{ steps.release.outputs.prnumber }}
+      prnu: ${{ steps.releasetwo.outputs.prnumber }}
 
     steps:
       - name: Check out code
@@ -27,6 +27,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
       - name: echo
+        id: releasetwo
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -65,12 +66,12 @@ jobs:
           echo $COM
       - name: PRINT PR
         run: |
-          echo ${{ steps.release.outputs.prnumber }}
-          echo ${{ steps.release.outputs.version }}
+          echo ${{ steps.releasetwo.outputs.prnumber }}
+          echo ${{ steps.releasetwo.outputs.version }}
 
       - name: PRINTJSON
         env:
-          PRKK: ${{ fromJSON(steps.release.outputs.prnumber) }}
+          PRKK: ${{ fromJSON(steps.releasetwo.outputs.prnumber) }}
         run: |
           echo $PRKK
           
