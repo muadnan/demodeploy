@@ -88,6 +88,10 @@ jobs:
         run: |
           gh pr checkout 39
           cat Chart.yaml
+      - name: Print Chart Version
+        run: |
+          CHART_VERSION=$(grep 'version:' Chart.yaml | awk '{print $$2}')
+          echo ${CHART_VERSION}
           
   tag:
     runs-on: ubuntu-latest
