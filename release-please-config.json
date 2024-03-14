@@ -10,6 +10,22 @@
       "extra-files": [
         {
           "type": "yaml",
+          "path": "/Chart.yaml",
+          "jsonpath": "$.appVersion"
+        },
+        {
+          "type": "yaml",
+          "path": "/Chart.yaml",
+          "jsonpath": "$.version"
+        }
+      ],
+      "release-type": "go",
+      "changelog-path": "demo/CHANGELOG.md"
+    },
+    "demo/redis": {
+      "extra-files": [
+        {
+          "type": "yaml",
           "path": "Chart.yaml",
           "jsonpath": "$.appVersion"
         },
@@ -20,7 +36,7 @@
         }
       ],
       "release-type": "go",
-      "changelog-path": "demo/CHANGELOG.md"
+      "changelog-path": "demo/redis/CHANGELOG.md"
     }
   }
 }
