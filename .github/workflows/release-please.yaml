@@ -90,8 +90,8 @@ jobs:
           cat Chart.yaml
       - name: Print Chart Version
         run: |
-          CHART_VERSION=$(grep 'version:' Chart.yaml | awk '{print $$2}')
-          echo ${CHART_VERSION}
+          chart="$(grep 'version:' Chart.yaml | awk '{print $$2}')"
+          echo ${chart}
           
   tag:
     runs-on: ubuntu-latest
