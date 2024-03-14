@@ -6,20 +6,21 @@
   "version-file": "./VERSION",
   "prerelease-type": "rc",
   "packages": {
-    ".": {
-         "extra-files": [
-            {
-              "type": "yaml",
-              "path": "Chart.yaml",
-              "jsonpath": "$.appVersion"
-            },
-            {
-              "type": "yaml",
-              "path": "Chart.yaml",
-              "jsonpath": "$.version"
-            },
-           "VERSION"
-         ]
+    "demo/dns": {
+      "extra-files": [
+        {
+          "type": "yaml",
+          "path": "Chart.yaml",
+          "jsonpath": "$.appVersion"
+        },
+        {
+          "type": "yaml",
+          "path": "Chart.yaml",
+          "jsonpath": "$.version"
+        }
+      ],
+      "release-type": "go",
+      "changelog-path": "demo/CHANGELOG.md"
     }
   }
 }
