@@ -72,11 +72,11 @@ jobs:
           echo ${{ steps.releasetwo.outputs.prnumber }}
           echo ${{ steps.releasetwo.outputs.version }}
 
-      - name: PRINTJSON
-        env:
-          PRKK: ${{ fromJSON(steps.releasetwo.outputs.prnumber) }}
-        run: |
-          echo $PRKK
+      # - name: PRINTJSON
+      #   env:
+      #     PRKK: ${{ fromJSON(steps.releasetwo.outputs.prnumber) }}
+      #   run: |
+      #     echo $PRKK
           
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
