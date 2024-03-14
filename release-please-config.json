@@ -4,6 +4,8 @@
   "include-component-in-tag": false,
   "version-file": "./VERSION",
   "skip-github-release": true,
+  "prerelease": "true",
+  "prerelease-type": "rc",
   "packages": {
     "demo/dns": {
       "extra-files": [
@@ -22,8 +24,6 @@
       "changelog-path": "demo/CHANGELOG.md"
     },
     "demo/redis": {
-      "prerelease": "true",
-      "prerelease-type": "rc",
       "extra-files": [
         {
           "type": "yaml",
