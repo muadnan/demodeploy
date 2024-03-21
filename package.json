@@ -11,7 +11,7 @@
     		"@automapper/nestjs": "8.7.2"
 	},
 	"devDependencies": {
-		"@types/node": "18",
+		"@types/node": "20",
 		"ava": "6.1.2",
 		"private-registry-mock": "0.3.0",
 		"tsd": "0.30.7",
