@@ -1,22 +1,28 @@
 {
-  "name": "package.json",
+  "name": "mern-tutorial",
   "version": "1.0.0",
-  "description": "Original version of this document copied from [yarnpkg](https://yarnpkg.com/lang/en/docs/package-json/).",
-  "main": "index.js",
+  "description": "Goalsetter app for youtube tutorial",
+  "main": "server.js",
   "scripts": {
-    "toc": "markdown-toc -i --maxdepth 3 README.md"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stereobooster/package.json.git"
-  },
-  "author": "",
+  "author": "Brad Traversy",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stereobooster/package.json/issues"
-  },
-  "homepage": "https://github.com/stereobooster/package.json#readme",
   "dependencies": {
-    "markdown-toc": "^1.2.0"
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.9"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }
