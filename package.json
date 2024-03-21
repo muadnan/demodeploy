@@ -1,20 +1,22 @@
 {
-  "name": "demodeploy",
-  "version": "21.1.0",
-  	"dependencies": {
-		"ky": "1.2.0",
-		"registry-auth-token": "5.0.2",
-		"registry-url": "6.0.1",
-		"semver": "7.6.0",
-		"@automapper/classes": "8.7.2",
-    		"@automapper/core": "8.7.2",
-    		"@automapper/nestjs": "8.7.2"
-	},
-	"devDependencies": {
-		"@types/node": "18",
-		"ava": "6.1.2",
-		"private-registry-mock": "0.3.0",
-		"tsd": "0.30.7",
-		"xo": "0.57.0"
-	}
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Original version of this document copied from [yarnpkg](https://yarnpkg.com/lang/en/docs/package-json/).",
+  "main": "index.js",
+  "scripts": {
+    "toc": "markdown-toc -i --maxdepth 3 README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stereobooster/package.json.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stereobooster/package.json/issues"
+  },
+  "homepage": "https://github.com/stereobooster/package.json#readme",
+  "dependencies": {
+    "markdown-toc": "^1.2.0"
+  }
 }
