@@ -1,4 +1,4 @@
 apiVersion: v2
 name: airflow
-version: 21.4.0
-appVersion: 21.4.0
+version: 21.0.0
+appVersion: 21.0.0
