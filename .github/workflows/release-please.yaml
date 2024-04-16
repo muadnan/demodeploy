@@ -92,6 +92,12 @@ jobs:
         run: |
           CHART_VERSION="$(grep 'version:' Chart.yaml | awk '{print $$1}')"
           echo "Version is: ${CHART_VERSION}"
+  piii:
+    needs: release-job
+    if: ${{ github.ref_name == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Adnan"
           
   tag:
     runs-on: ubuntu-latest
