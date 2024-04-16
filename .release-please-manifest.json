@@ -1,4 +1,4 @@
 {
-  "demo/dns": "0.4.0",
-  "demo/redis": "0.4.0"
+  "demo/dns": "21.0.0",
+  "demo/redis": "21.0.0"
 }
