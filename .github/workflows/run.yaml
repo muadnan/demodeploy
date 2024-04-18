@@ -7,3 +7,14 @@
 
 #   pipeline:
 #     uses: ./.github/workflows/build.yaml
+
+name: action
+on:
+  push:
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/action.yaml
+        with:
+          who-to-greet: "acb"
