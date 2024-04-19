@@ -26,11 +26,7 @@
         "matchDepTypes": ["*"],
         "matchPackagePatterns": ["*"],
         "groupName": "dep",
-        "matchUpdateTypes": ["*"],
-        "minimumReleaseAge": "3 days",
-        "internalChecksFilter": "strict",
-        "internalChecksAsSuccess": false,
-        "automerge": false
+        "matchUpdateTypes": ["*"]
       }
   ],
   "vulnerabilityAlerts": {
