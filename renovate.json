@@ -23,39 +23,12 @@
   },
   "packageRules": [
       {
-        "matchDepTypes": ["devDependencies"],
+        "matchDepTypes": ["*"],
         "matchPackagePatterns": ["*"],
-        "matchUpdateTypes": ["minor"],
+        "matchUpdateTypes": ["*"],
         "minimumReleaseAge": "3 days",
         "internalChecksFilter": "strict",
         "internalChecksAsSuccess": false,
-        "automerge": true
-      },
-      {
-          "matchPackagePatterns": ["*"],
-          "matchUpdateTypes": ["major"],
-          "enabled": true,
-          "minimumReleaseAge": "30 days",
-          "internalChecksFilter": "strict",
-          "internalChecksAsSuccess": true,
-        "automerge": false
-      },
-      {
-          "matchPackagePatterns": ["*"],
-          "matchUpdateTypes": ["minor"],
-          "enabled": true,
-          "minimumReleaseAge": "30 days",
-          "internalChecksFilter": "strict",
-          "internalChecksAsSuccess": true,
-          "automerge": false
-      },
-      {
-          "matchPackagePatterns": ["*"],
-          "matchUpdateTypes": ["patch","digest"],
-          "enabled": true,
-          "minimumReleaseAge": "30 days",
-          "internalChecksFilter": "strict",
-          "internalChecksAsSuccess": true,
         "automerge": false
       }
   ],
