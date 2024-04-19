@@ -59,5 +59,9 @@
         "automerge": false
       }
   ],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "enabled": true
+  },
   "enabled": true
 }
