@@ -4,7 +4,7 @@
   "enabledManagers": ["terraform","terraform-version","argocd","helm-values","helmfile","helmv3","kubernetes"],
   "branchPrefix": "chore/",
   "prHourlyLimit": 10,
-  "baseBranches": ["master"],
+  "baseBranches": ["main"],
   "ignorePaths": [
     "**/cmms/**",
     "**/scripts/**",
