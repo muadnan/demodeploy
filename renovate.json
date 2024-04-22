@@ -43,13 +43,14 @@
       "enabled": true
     }
   ],
-  "customManagers": [
+  "regexManagers": [
     {
       "fileMatch": ["\\.tf$"],
       "matchStrings": ["targetRevision: \"(?<currentValue>.*?)\""],
       "depNameTemplate": "kubectl_manifest",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "gitlab-tags"
+      "packageNameTemplate": "cloudquery/cloudquery",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
     }
   ],
   "kubernetes": {
