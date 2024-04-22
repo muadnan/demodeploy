@@ -16,3 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.repository_owner }}
+      - uses: actions/checkout@v4
+        with:
+          ref: 'main'
+     
