@@ -5,6 +5,7 @@
   "version-file": "./VERSION",
   "skip-github-release": true,
   "prerelease": "true",
+  "versioning-strategy": "prerelease",
   "prerelease-type": "rc",
   "packages": {
     "demo/dns": {
