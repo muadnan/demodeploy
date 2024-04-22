@@ -1,5 +1,15 @@
 # Changelog
 
+## [21.1.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v21.1.0) (2024-04-22)
+
+
+### Features
+
+* added pkg ([53eaf9d](https://github.com/adnanshahm/demodeploy/commit/53eaf9d8b754ad663fcdd807175a49d8a1cc710a))
+* added pkg ([8ae1696](https://github.com/adnanshahm/demodeploy/commit/8ae1696b3702f77e696883fcfd0d7f53e36bf4f8))
+* pre ([c4b5ec4](https://github.com/adnanshahm/demodeploy/commit/c4b5ec44b5748635a7cb62e0199cc381c2756299))
+* pre-release to redis ([12791aa](https://github.com/adnanshahm/demodeploy/commit/12791aaf55afb311d90090aec7e9a796c2cf926c))
+
 ## [21.0.0](https://github.com/adnanshahm/demodeploy/compare/v0.4.0...v21.0.0) (2024-04-15)
 
 
