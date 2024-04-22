@@ -1,37 +1,53 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends":[
-      "config:recommended"
+  "extends": ["config:recommended"],
+  "enabledManagers": ["terraform","terraform-version","argocd","helm-values","helmfile","helmv3","kubernetes"],
+  "branchPrefix": "chore/",
+  "prHourlyLimit": 10,
+  "baseBranches": ["master"],
+  "ignorePaths": [
+    "**/cmms/**",
+    "**/scripts/**",
+    "**/certificates/**",
+    "**/acl/**"
   ],
-  "prHourlyLimit": 0,
-  "goGetDirs": ["./"],
-  "ignoreTests": true,
-  "prConcurrentLimit": 0,
-  "enabledManagers": ["gomod","npm"],
-  "separateMinorPatch": true,
-  "branchConcurrentLimit": 0,
-  "commitMessageExtra": "from {{{currentVersion}}} to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
-  "branchPrefix": "feature/",
-  "baseBranches": ["main"],
-  "postUpgradeTasks": {
-    "commands": ["go run script.go --msg \"updating {{{depName}}} from {{{currentVersion}}} to {{{newVersion}}}\""],
-    "fileFilters": ["CHANGELOG.md"],
-    "executionMode": "update"
-  },
-    "constraints": {
-    "go": "1.21"
-  },
   "packageRules": [
-      {
-        "matchDepTypes": ["*"],
-        "matchPackagePatterns": ["*"],
-        "groupName": "dep",
-        "matchUpdateTypes": ["*"]
-      }
+    {
+      "matchManagers": ["terraform","terraform-version"],
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["required_provider"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "major terraform",
+      "addLabels": ["terraform-major"],
+      "commitMessagePrefix": "chore(deps): ",
+      "enabled": true
+    },
+    {
+      "matchManagers": ["terraform","terraform-version"],
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["required_provider"],
+      "matchUpdateTypes": ["minor"],
+      "groupName": "minor terraform",
+      "addLabels": ["terraform-minor"],
+      "commitMessagePrefix": "chore(deps): ",
+      "enabled": true
+    },
+    {
+      "matchManagers": ["terraform","terraform-version"],
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["required_provider"],
+      "matchUpdateTypes": ["patch"],
+      "groupName": "patch terraform",
+      "addLabels": ["terraform-patch"],
+      "commitMessagePrefix": "chore(deps): ",
+      "enabled": true
+    }
   ],
-  "vulnerabilityAlerts": {
-    "labels": ["security"],
-    "enabled": true
+  "kubernetes": {
+    "fileMatch": ["\\.yaml", "\\.yml","\\.tpl.yaml","\\.tpl.yml"]
+  },
+    "argocd": {
+    "fileMatch": ["\\.tf","\\.yaml", "\\.yml","\\.tpl.yaml","\\.tpl.yml"]
   },
   "enabled": true
 }
