@@ -43,6 +43,14 @@
       "enabled": true
     }
   ],
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tf$"],
+      "matchStrings": ["targetRevision: \"(?<currentValue>.*?)\""],
+      "depNameTemplate": "kubectl_manifest",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
   "kubernetes": {
     "fileMatch": ["\\.tf","\\.yaml", "\\.yml","\\.tpl.yaml","\\.tpl.yml"]
   },
