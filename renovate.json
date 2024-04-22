@@ -44,7 +44,7 @@
     }
   ],
   "kubernetes": {
-    "fileMatch": ["\\.yaml", "\\.yml","\\.tpl.yaml","\\.tpl.yml"]
+    "fileMatch": ["\\.tf","\\.yaml", "\\.yml","\\.tpl.yaml","\\.tpl.yml"]
   },
     "argocd": {
     "fileMatch": ["\\.tf","\\.yaml", "\\.yml","\\.tpl.yaml","\\.tpl.yml"]
