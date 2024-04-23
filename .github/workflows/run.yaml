@@ -8,7 +8,7 @@
 #   pipeline:
 #     uses: ./.github/workflows/build.yaml
 
-name: action
+name: Github Action For
 on:
   push:
 jobs:
