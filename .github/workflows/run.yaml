@@ -10,12 +10,12 @@
 
 name: Github Action For
 on:
-  push:
+  workflow_dispatch:
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.repository_owner }}
+      - run: echo ${{ github.ref_name }}
       - uses: actions/checkout@v4
         with:
           ref: 'main'
