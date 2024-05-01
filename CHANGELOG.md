@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.0.1](https://github.com/adnanshahm/demodeploy/compare/v22.0.0...v22.0.1) (2024-05-01)
+
+
+### Bug Fixes
+
+* tat ([474806c](https://github.com/adnanshahm/demodeploy/commit/474806c734bf9147ceba48f0f64958a266034f0d))
+
 ## [22.0.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v22.0.0) (2024-05-01)
 
 
