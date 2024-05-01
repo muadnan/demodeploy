@@ -1,6 +1,6 @@
 {
   "name": "mern-tutorial",
-  "version": "21.0.1",
+  "version": "21.0.0",
   "description": "Goalsetter app for youtube tutorial",
   "main": "server.js",
   "scripts": {
