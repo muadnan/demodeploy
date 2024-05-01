@@ -1,5 +1,15 @@
 # Changelog
 
+## [21.0.1](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v21.0.1) (2024-05-01)
+
+
+### Bug Fixes
+
+* asas ([dedd0b9](https://github.com/adnanshahm/demodeploy/commit/dedd0b90dd1df2165476fb206ac523022a523e05))
+* asas ([140a9f6](https://github.com/adnanshahm/demodeploy/commit/140a9f695eb468ea7ccec011130c92da353314a6))
+* asas ([778898e](https://github.com/adnanshahm/demodeploy/commit/778898e9287fb3f4b643d29fec0a426a79f5715a))
+* major ([e8d6b46](https://github.com/adnanshahm/demodeploy/commit/e8d6b463c73e0c9bec632f5b908d051e92e3be6f))
+
 ## [21.0.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.1...v21.0.0) (2024-05-01)
 
 
