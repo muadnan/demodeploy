@@ -34,7 +34,7 @@
           "jsonpath": "$.version"
         },
         {
-          "path": "version.txt"
+          "path": "package.json"
         }
       ],
       "release-type": "go",
