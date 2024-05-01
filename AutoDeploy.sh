@@ -26,7 +26,5 @@ ssh $server_user@$server_ip <<  EOF            ##Extablishing conection to remot
 EOF
 
 #Running container on port 80 in detach mode...
+
 demo
-demo
-feA
-gj

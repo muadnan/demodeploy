@@ -7,3 +7,18 @@
 
 #   pipeline:
 #     uses: ./.github/workflows/build.yaml
+
+name: Github Action For
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.ref_name }}
+      - uses: actions/checkout@v4
+        with:
+          ref: 'main'
+      - run: echo ${{ github.path }}
+     
