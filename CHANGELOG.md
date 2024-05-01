@@ -1,5 +1,22 @@
 # Changelog
 
+## [21.1.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v21.1.0) (2024-05-01)
+
+
+### Features
+
+* test commit ([#87](https://github.com/adnanshahm/demodeploy/issues/87)) ([3ca9686](https://github.com/adnanshahm/demodeploy/commit/3ca968651cd7680a2676eeeada1011f2d4718eda))
+
+
+### Bug Fixes
+
+* test ([2af4d27](https://github.com/adnanshahm/demodeploy/commit/2af4d27d0075fe7e2a6573ac33ae739a7bcc19fd))
+
+
+### Reverts
+
+* test commit ([#87](https://github.com/adnanshahm/demodeploy/issues/87)) ([#90](https://github.com/adnanshahm/demodeploy/issues/90)) ([2c1f64d](https://github.com/adnanshahm/demodeploy/commit/2c1f64de81c81b44ae73a3fb11e61ede1697a643))
+
 ## 21.0.0 (2024-05-01)
 
 
