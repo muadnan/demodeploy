@@ -33,9 +33,7 @@
           "path": "Chartredis.yaml",
           "jsonpath": "$.version"
         },
-        {
-          "path": "package.json"
-        }
+          "package.json"
       ],
       "release-type": "go",
       "changelog-path": "demo/redis/CHANGELOG.md"
