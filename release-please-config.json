@@ -2,22 +2,19 @@
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
   "release-type": "go",
   "include-component-in-tag": false,
-  "version-file": "./VERSION",
+  "version-file": "./version.txt",
   "skip-github-release": true,
-  "prerelease": "true",
-  "versioning": "prerelease",
-  "prerelease-type": "rc",
   "packages": {
     "demo/dns": {
       "extra-files": [
         {
           "type": "yaml",
-          "path": "/Chart.yaml",
+          "path": "Chart.yaml",
           "jsonpath": "$.appVersion"
         },
         {
           "type": "yaml",
-          "path": "/Chart.yaml",
+          "path": "Chart.yaml",
           "jsonpath": "$.version"
         }
       ],
