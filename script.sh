@@ -16,6 +16,3 @@ else
 fi
 as
 as
-ads
-asas
-daakl
