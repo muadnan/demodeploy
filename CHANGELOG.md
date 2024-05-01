@@ -1,5 +1,16 @@
 # Changelog
 
+## [22.0.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v22.0.0) (2024-05-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* major
+
+### Features
+
+* major ([aff10ca](https://github.com/adnanshahm/demodeploy/commit/aff10ca20782a175913fc549a5091eeffce384b5))
+
 ## [21.0.0](https://github.com/adnanshahm/demodeploy/compare/v22.0.0...v21.0.0) (2024-05-01)
 
 
