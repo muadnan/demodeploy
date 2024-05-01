@@ -14,3 +14,4 @@ else
     # If the file doesn't exist, display an error message
     echo "Error: File $file not found."
 fi
+adlk
