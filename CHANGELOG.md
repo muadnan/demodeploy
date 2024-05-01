@@ -1,5 +1,12 @@
 # Changelog
 
+## [21.0.1](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v21.0.1) (2024-05-01)
+
+
+### Bug Fixes
+
+* major ([0c6a808](https://github.com/adnanshahm/demodeploy/commit/0c6a808cae083f92a2bdb9a5d8149ec82e718a67))
+
 ## [21.0.0](https://github.com/adnanshahm/demodeploy/compare/v22.0.0...v21.0.0) (2024-05-01)
 
 
