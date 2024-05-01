@@ -1,21 +1,5 @@
 # Changelog
 
-## [22.0.0](https://github.com/adnanshahm/demodeploy/compare/v21.0.0...v22.0.0) (2024-05-01)
-
-
-### ⚠ BREAKING CHANGES
-
-* test commit
-
-### Features
-
-* test commit ([a9bb9dc](https://github.com/adnanshahm/demodeploy/commit/a9bb9dcef9505a2e6c6caa28cae95308d7ca0323))
-
-
-### Bug Fixes
-
-* test ([2af4d27](https://github.com/adnanshahm/demodeploy/commit/2af4d27d0075fe7e2a6573ac33ae739a7bcc19fd))
-
 ## 21.0.0 (2024-05-01)
 
 
