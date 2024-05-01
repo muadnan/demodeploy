@@ -16,5 +16,3 @@ else
 fi
 as
 as
-adasd
-display
