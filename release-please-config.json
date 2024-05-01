@@ -25,13 +25,16 @@
       "extra-files": [
         {
           "type": "yaml",
-          "path": "Chart.yaml",
+          "path": "Chartredis.yaml",
           "jsonpath": "$.appVersion"
         },
         {
           "type": "yaml",
-          "path": "Chart.yaml",
+          "path": "Chartredis.yaml",
           "jsonpath": "$.version"
+        },
+        {
+          "path": "version.txt"
         }
       ],
       "release-type": "go",
