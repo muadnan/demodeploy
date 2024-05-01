@@ -28,17 +28,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           target-branch: ${{ github.ref_name }}
-      - name: Merge
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr merge 102 --squash
-      - name: Release with release-please
-        uses: google-github-actions/release-please-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          config-file: release-please-config.json
-          target-branch: main
       # - name: echo
       #   id: releasetwo
       #   env:
