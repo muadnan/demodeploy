@@ -23,8 +23,7 @@ jobs:
           ref: 'main'
       - run: echo ${{ github.path }}
   print-test:
-    if: ('false'=='true')
-    needs: print
+    needs: [print]
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.ref_name }}
