@@ -10,7 +10,7 @@
 
 name: Github Action For
 on:
-  push:
+  pull_request:
   workflow_dispatch:
 jobs:
   print:
@@ -21,4 +21,12 @@ jobs:
         with:
           ref: 'main'
       - run: echo ${{ github.path }}
+  print-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.ref_name }}
+      - uses: actions/checkout@v4
+        with:
+          ref: 'main'
+      - run: echo ${{ github.repository }}
      
