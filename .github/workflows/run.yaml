@@ -14,6 +14,7 @@ on:
   workflow_dispatch:
 jobs:
   print:
+    if: ('false'=='true')
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.ref_name }}
@@ -22,6 +23,7 @@ jobs:
           ref: 'main'
       - run: echo ${{ github.path }}
   print-test:
+    if: ('false'=='true')
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.ref_name }}
