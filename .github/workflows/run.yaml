@@ -31,4 +31,16 @@ jobs:
         with:
           ref: 'main'
       - run: echo ${{ github.repository }}
+
+  print-test-oo:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        application: [ api, manager ]
+    steps:
+      - run: echo ${{ github.ref_name }}
+      - uses: actions/checkout@v4
+        with:
+          ref: 'main'
+      - run: echo ${{ github.repository }}
      
