@@ -34,6 +34,7 @@ jobs:
 
   print-test-oo:
     runs-on: ubuntu-latest
+    needs: print
     strategy:
       matrix:
         application: [ api, manager ]
